@@ -17,6 +17,10 @@
 
 # ask if they want to play again
 
+# tips
+# use .UPPER or.lower
+
+
 gallows = [
     '''
       +---+
@@ -83,4 +87,28 @@ gallows = [
     '''
     ]
 
-print(gallows[4])
+import random
+word_list = ["Iowa", "Sanders", "Caucus", "Biden", "Buttigieg", "Electability"]
+word = word_list[random.randrange(0, (len(word_list) + 1))]
+abcs = [chr(x) for x in range(65, 65+26)] # 65 is capital A on ASCII chart
+incorrect_guesses = 0
+done = False
+
+print(gallows[0])
+while not done:
+    for letter in word:
+        print("_")
+    guess = input("Guess a letter: ").upper()
+    if guess in word:
+        print("Correct Guess!")
+
+    if guess not in word:
+        incorrect_guesses += 1
+        print(gallows[incorrect_guesses])
+    if incorrect_guesses > 8:
+        print("You lost!")
+        # replay = input(str(("Do you want to play again? Y or N: "))
+        # if replay == Y.upper:
+            # done = False
+        # if replay == N.upper:
+            # done = True
