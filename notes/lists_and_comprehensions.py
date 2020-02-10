@@ -62,7 +62,7 @@ print(my_names)
 my_names.reverse()
 print(my_names)
 
-# MODIFYING LISTS
+# MODIFYING LISTSpop
 del my_names[10]
 print(my_names)
 
@@ -143,7 +143,6 @@ my_list = [x ** 2 for x in range(101) if x ** 2 % 2 == 0]
 print(my_list)
 
 #  roll a single die 100 times and add it to the list
-
 my_list = []
 
 for i in range(100):
