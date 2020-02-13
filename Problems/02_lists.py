@@ -7,6 +7,7 @@
 my_list = [x for x in range(1, 101)]
 # b) Make a list of even numbers from 20 to 40
 my_even_list = [x for x in range(20, 41) if x ** 2 % 2 == 0]
+my_even_list = [x for x in range(20, 41, 2)]
 # c) Make a list of squares from 1 to 100 (1 ** 2 to 100 ** 2)
 my_squares_list = [x ** 2 for x in range(1, 101)]
 # d) Make a list of all positive numbers in my_list below.
@@ -37,6 +38,13 @@ print(top_ten)
 # PROBLEM 4 (4pts)
 # Find the number which appears most often in num_list?
 freq_list = []
+appearances = 0
+number = 0
+for n in num_list:
+    if num_list.count(num_list, n) > appearances:
+        appearances = my_list.count(num_list, n)
+        number = n
+print(number)
 
 for num in num_list:
     freq = num_list.count(num)
@@ -68,6 +76,13 @@ for num in prime_num_list:
 
 print(len(my_primes))
 
+def is_prime(n):
+    for i in range(2, n):
+        if n % i == 0:
+            return False
+    return True
+for num in num_list:
+    is_prime(num)
 # Find the number of palindromes
 # Hint: This may be easier to do with strings
 palindrome = 0
@@ -77,3 +92,10 @@ for num in num_list:
     if num[0] == num[-1] and num[1] == num[-2]:
         palindrome += 1
 print(palindrome)
+
+def is_palindrome(my_string):
+    for i in range(len(my_string)):
+        if my_string[i] != my_string[-i - 1]:
+            return False
+    return True
+
