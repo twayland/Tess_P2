@@ -16,3 +16,55 @@ Turtle Recursion (30pts)
   Have fun!
 
 '''
+
+import turtle
+
+my_turtle = turtle.Turtle()
+my_turtle.shape("turtle")
+my_turtle.speed(0)
+
+my_screen = turtle.Screen()
+my_screen.bgcolor('white')
+
+
+def recursive_h(x, y, width, height, depth):
+    if depth > 0:
+        my_turtle.up()
+        my_turtle.goto(x - (width / 2), y + (height / 2))
+        my_turtle.down()
+        my_turtle.goto(x - (width / 2), y - (height / 2))
+        my_turtle.goto(x - (width / 2), y)
+        my_turtle.goto(x + (width / 2), y)
+        my_turtle.goto(x + (width / 2), y + height / 2)
+        my_turtle.goto(x + (width / 2), y - height / 2)
+        my_turtle.up()
+        my_turtle.goto(x, y)
+        recursive_h(x + width / 2, y + height / 2, width // 2, height // 2, depth - 1)
+        recursive_h(x + width / 2, y - height / 2, width // 2, height // 2, depth - 1)
+        recursive_h(x - width / 2, y - height / 2, width // 2, height // 2, depth - 1)
+        recursive_h(x - width / 2 , y + height / 2, width // 2, height // 2, depth - 1)
+
+'''
+def recursive_personal(x, y, width, height, depth, thickness):
+    my_turtle.width(thickness)
+    my_turtle.goto(x, y - height)
+    my_turtle.goto(x, y)
+    if depth > 0:
+        my_turtle.width(thickness)
+        my_turtle.down()
+        my_turtle.goto(x + width, y + height)
+        next_position = my_turtle.pos()
+        my_turtle.up()
+        my_turtle.goto(x, y)
+        my_turtle.down()
+        my_turtle.goto(x - width, y + height)
+        my_turtle.up()
+        my_turtle.goto(next_position)
+        my_turtle.setheading(50)
+        recursive_personal(x + width, y + height, width / 2, height / 2, depth - 1, thickness - 1)
+        recursive_personal(x - width, y + height, width / 2, height / 2, depth - 1, thickness - 1)
+
+
+# recursive_h(0, 0, 300, 400, 4)
+'''
+my_screen.exitonclick()
