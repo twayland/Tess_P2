@@ -15,6 +15,7 @@ It has been updated with 2018 data, but not yet with 2019 unfortunately
 6  What trend or trends do you see in the data?  Offer a hypotheses which might explain the trend(s). Just add a comment here to explain. (2pts)
 '''
 
+import matplotlib.pyplot as plt
 import csv
 
 with open("CTA_-_Ridership_-_Annual_Boarding_Totals (1).csv") as f:
@@ -22,3 +23,27 @@ with open("CTA_-_Ridership_-_Annual_Boarding_Totals (1).csv") as f:
     data = list(cr)
 
 print(data)
+
+header = data.pop(0)
+print(header)
+
+data.sort(key=lambda x: int(x[0]))
+last_10 = data[-11:]
+years = [int(x[0]) for x in last_10]
+rail = [int(x[3]) for x in last_10]
+bus = [int(x[1]) for x in last_10]
+total = [int(x[4]) for x in last_10]
+
+plt.figure(1, tight_layout=True)
+plt.plot(years, rail, color='blue', marker='*', label='Rail')
+plt.plot(years, bus, color='black', marker='*', label='Bus')
+plt.plot(years, total, color='red', marker='*', label='Total')
+plt.xticks(years, rotation=45)
+plt.xlabel('Years')
+plt.ylabel('Ridership')
+plt.title("CTA Ridership over the Past 10 Years", fontsize=18)
+plt.legend()
+
+plt.show()
+
+
