@@ -44,7 +44,21 @@ def recursive_h(x, y, width, height, depth):
         recursive_h(x - width / 2, y - height / 2, width // 2, height // 2, depth - 1)
         recursive_h(x - width / 2 , y + height / 2, width // 2, height // 2, depth - 1)
 
-'''
+
+def recursive_escher_fractal(x, y, head, side, depth):
+    if depth > 0:
+        my_turtle.up()
+        my_turtle.goto(x, y)
+        my_turtle.setheading(head)
+        my_turtle.down()
+        for i in range(4):
+            my_turtle.forward(side)
+            my_turtle.right(90)
+            my_turtle.forward(side)
+        new_position = my_turtle.pos()
+        recursive_escher_fractal(new_position[0], new_position[1], head + 45, side * 45 / 64, depth - 1)
+
+
 def recursive_personal(x, y, width, height, depth, thickness):
     my_turtle.width(thickness)
     my_turtle.goto(x, y - height)
@@ -65,6 +79,10 @@ def recursive_personal(x, y, width, height, depth, thickness):
         recursive_personal(x - width, y + height, width / 2, height / 2, depth - 1, thickness - 1)
 
 
-# recursive_h(0, 0, 300, 400, 4)
-'''
+recursive_h(0, 0, 300, 400, 4)
+my_screen.clear()
+recursive_personal(0, 0, 30, 30, 5, 5)
+my_screen.clear()
+recursive_escher_fractal(-250, 250, 0, 500, 16)
+
 my_screen.exitonclick()
