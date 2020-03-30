@@ -47,3 +47,8 @@ plt.legend()
 plt.show()
 
 
+# my hypothesis: ridership overall has gone down since the beginning/popularity of rideshare apps increase
+# train ridership always lower than bus because of capacity reasons? they're pulling closer together not sure why
+
+
+
