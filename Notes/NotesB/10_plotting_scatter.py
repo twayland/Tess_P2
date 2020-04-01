@@ -45,6 +45,13 @@ plt.annotate("MY TEXT", xy=(50, 50))
 for i in range(len(countries)):
     plt.annotate(countries[i], xy=(firearms_100[i], homicide_100k[i]))
 
+# best fit line
+p = np.polyfit(firearms_100, homicide_100k, 1)  # (x, y, order) # linear is first order
+
+x = [x for x in range(100)]
+y = [p[0] * y + p[1] for y in x]
+
+plt.plot(x, y)
 
 
 plt.show()
