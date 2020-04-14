@@ -31,7 +31,6 @@ for country in data:
     except:
         print(country[0], "invalid data")
 
-
 print(names)
 
 plt.figure("Firearm Plot", figsize=(10, 6))
