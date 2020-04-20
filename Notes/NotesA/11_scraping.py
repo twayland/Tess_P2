@@ -45,7 +45,7 @@ print(quote_list)
 
 # combine attributes and tags
 # find authors
-author_tags = soup.find_all("small", class_="author",itemprop="author")
+author_tags = soup.find_all("small", class_="author", itemprop="author")
 author_list = [x.text for x in author_tags]
 print(author_list)
 

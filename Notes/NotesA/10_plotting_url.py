@@ -39,6 +39,8 @@ for building in data:
     except:
         pass
 
+print(len(valid_data))
+
 ghg = [int(x[ghg_index]) for x in valid_data]
 color = []
 for building in ghg:
@@ -47,7 +49,11 @@ for building in ghg:
     else:
         color.append("green")
 
+
 sqft = [int(x[sqft_index]) for x in valid_data]
+
+
+
 plt.figure(1, tight_layout=True)
 
 plt.scatter(sqft, ghg, alpha=0.3, c=color)  # s for size, c for color (arrays
