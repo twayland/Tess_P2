@@ -9,9 +9,9 @@
 # Data set is in this folder, but can be found at: https://data.cityofchicago.org/api/views/8pix-ypme/rows.csv?accessType=DOWNLOAD
 import folium
 import csv
-from folium import plugins # thank you star for passing this along so i could get brown and yellow
+from folium import plugins  # thank you star for passing this along so i could get brown and yellow
 
-# run through readerr
+# run through reader
 with open('CTA_-_System_Information_-_List_of__L__Stops (1).csv') as f:
     reader = csv.reader(f)
     data = list(reader)
@@ -31,11 +31,11 @@ for train in data:
     elif train[9] == 'true':
         colors.append('green')
     elif train[10] == 'true':
-        colors.append('	#A52A2A')  # hex code
+        colors.append('	#A52A2A')  # html code
     elif train[11] == 'true' or train[12] == 'true':
         colors.append('purple')
     elif train[13] == 'true':
-        colors.append('#FFFF00') # hex code
+        colors.append('#FFFF00')  # html code
     elif train[14] == 'true':
         colors.append('pink')
     elif train[-2] == 'true':

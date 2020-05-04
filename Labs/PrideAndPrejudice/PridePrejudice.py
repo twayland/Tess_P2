@@ -16,8 +16,8 @@ A common Python pattern to count objects, produce histograms, or update stats is
 # Split the transcript into words - Use split and strip methods and store results in a list.
 # Create a dictionary object to store the word counts
 # Iterate through the list/text of Pride and Prejudice
-# Update word counts on your dict (10pts)
-# Sort words by counts in descending order (5pts)
+# Update word counts on your dict (10pts) {'word1': 5, 'word2': 2...}
+# Sort words by counts in descending order (5pts) stackoverflow probably?
 # Create Bar Graph (5pts)
 # Include descriptive titles and labels (5pts)
 
@@ -30,7 +30,7 @@ pride_prejudice = requests.get(url).text
 print(pride_prejudice[:1000])
 
 wordlist = pride_prejudice.split()
-wordlist = [x.upper().strip(' ?.:;!\\<>{}\n\t') for x in wordlist]
+wordlist = [x.upper().strip(' ?.:;!/\<>{}\n\t') for x in wordlist]
 
 print(wordlist[:1000])
 
