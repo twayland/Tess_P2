@@ -76,8 +76,9 @@ print(the_office.pop('genre'))
 print(the_office)
 
 
-# using a dictionary to track (database like)
-flips = [random.choice['heads', 'tails'] for x in range(100)]
+# Using a dictionary to track (database like)
+flips = [random.choice(['heads', 'tails']) for x in range(100)]
+print(flips)
 
 head_tails = {}
 
@@ -92,4 +93,8 @@ for flip in flips:
             head_tails['tails'] += 1
         else:
             head_tails['tails'] = 1
+
 print(head_tails)
+
+
+
