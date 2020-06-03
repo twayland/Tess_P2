@@ -53,7 +53,9 @@ genre_nineteen_count = []
 all_genres_count = []
 
 # definitions for counting
-def Remove(duplicate):  # found on stack overflow
+
+
+def remove(duplicate):  # found on stack overflow
     final_list = []
     for genre in duplicate:
         if genre not in final_list:
@@ -69,11 +71,11 @@ def genre_count(year_list, count_list):
 
 # running count on lists
 genre_count(genre_ten, genre_ten_count)
-genre_ten_count = Remove(genre_ten_count)
+genre_ten_count = remove(genre_ten_count)
 genre_count(genre_nineteen, genre_nineteen_count)
-genre_nineteen_count = Remove(genre_nineteen_count)
+genre_nineteen_count = remove(genre_nineteen_count)
 genre_count(all_genres, all_genres_count)
-all_genres_count = Remove(all_genres_count)
+all_genres_count = remove(all_genres_count)
 print(all_genres_count)
 
 
@@ -172,8 +174,6 @@ plt.xlabel('Genres')
 
 plt.title('Top Genres 2010 vs. 2019')
 
-'''
-
 genres_list_19 = [str(x[1]) for x in genre_nineteen_count]
 y_pos_19 = np.arange(len(genres_list_19))
 counts_19 = [int(x[0]) for x in genre_nineteen_count]
@@ -182,7 +182,6 @@ plt.bar(y_pos_19, counts_19, align='center', color='#fc6869')
 plt.xticks(y_pos_19, genres_list_19)
 plt.ylabel('Appearances')
 plt.xlabel('Genres')
-'''
 
 plt.show()
 
